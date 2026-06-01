@@ -41,7 +41,7 @@ with app.app_context():
 # --- READ — listar ---
 @app.route("/")
 def index():
-    alunos = Aluno.query.order_by(Aluno.nome).all()
+    alunos = Aluno.query.order_by((Aluno.nome).desc()).all()
     return render_template("lista.html", alunos=alunos)
 
 
